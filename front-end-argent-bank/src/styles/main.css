@@ -19,6 +19,7 @@ body {
 
 .bg-dark {
   background-color: #12002b;
+  padding-top: 1%;
 }
 
 .sr-only {
@@ -34,6 +35,7 @@ body {
   width: 1px !important;
   white-space: nowrap !important; /* 3 */
 }
+
 
 .main-nav {
   display: flex;
@@ -71,7 +73,7 @@ body {
 }
 
 .hero {
-  background-image: url('../assets/bank-tree.jpeg');
+  background-image: url("../assets/bank-tree.jpeg");
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;

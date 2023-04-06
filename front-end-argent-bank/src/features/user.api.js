@@ -47,6 +47,7 @@ export const updateUserProfile = async (firstname, lastname) => {
  * Set the authentication header for future HTTP requests.
  * @param {string} token - The user's authentication token.
  */
+
 export const setAuthHeader = (token) => {
   axios.defaults.headers.common = {
     Authorization: `Bearer ${token}`,

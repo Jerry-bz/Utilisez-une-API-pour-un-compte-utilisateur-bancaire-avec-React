@@ -56,17 +56,29 @@ If the user has not entered both first and last names, it displays an alert mess
   const inputName = (
     <div className="header">
       <h1>Update Profile</h1>
-      <input
-        placeholder={informations.firstname}
-        value={firstName ?? ""}
-        onChange={(e) => setFirstName(e.target.value)}
-      />
-      <input
-        placeholder={informations.lastname}
-        value={lastName ?? ""}
-        onChange={(e) => setLastName(e.target.value)}
-      />
-      <div className="update-Button">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "10vw",
+          margin: "auto",
+          padding: "1%",
+        }}
+      >
+        <input
+          style={{ textAlign: "center", margin: "1%" }}
+          placeholder={informations.firstname}
+          value={firstName ?? ""}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+        <input
+          style={{ textAlign: "center", margin: "1%" }}
+          placeholder={informations.lastname}
+          value={lastName ?? ""}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+      </div>
+      <div style={{ display: "flex", justifyContent: "center", gap: "1vw" }}>
         <button className="edit-button" onClick={handleSaveClick}>
           Save
         </button>

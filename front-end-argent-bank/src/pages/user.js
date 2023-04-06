@@ -5,7 +5,7 @@ import Identity from "../components/identity";
 import { getSession, getProfile } from "../features/user.slice";
 import { setAuthHeader } from "../features/user.api";
 
- // The user page component
+// The user page component.
 
 export default function User() {
   const data = useSelector((state) => state.user);

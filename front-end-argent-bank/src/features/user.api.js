@@ -53,3 +53,29 @@ export const setAuthHeader = (token) => {
     Authorization: `Bearer ${token}`,
   };
 };
+
+/* const loginUserHtml = async (mail, password) => {
+
+ try {
+  const response = await fetch("http://localhost:3001/api/v1/user/login", {
+    method: "post",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      email: mail,
+      password: password,
+    }),
+  });
+
+  const data = await response.json();
+  console.log(data.body.token);
+
+  return data.body.token;
+
+ } catch (error) {
+  console.log(error);
+ }
+};
+
+loginUserHtml("tony@stark.com", "password123"); */

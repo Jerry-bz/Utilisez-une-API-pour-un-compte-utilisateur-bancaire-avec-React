@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { updateProfile } from "../features/user.slice";
 import { useDispatch } from "react-redux";
+import "../styles/identity.css";
 
 /**
 @module Identity
@@ -41,48 +42,61 @@ If the user has not entered both first and last names, it displays an alert mess
     }
   };
   const textName = (
-    <div className="header">
+    <div className="textname_header">
       <h1>Welcome back</h1>
       <p>
         {firstName ?? informations.firstname}{" "}
         {lastName ?? informations.lastname}
       </p>
-      <button onClick={() => setIsEditing(true)} className="edit-button">
+      <button
+        onClick={() => setIsEditing(true)}
+        className="textname_edit-button"
+      >
         Edit Name
       </button>
     </div>
   );
 
   const inputName = (
-    <div className="header">
+    <div className="inputname_header">
       <h1>Update Profile</h1>
       <div
         style={{
           display: "flex",
-          flexDirection: "column",
-          width: "10vw",
-          margin: "auto",
-          padding: "1%",
+          justifyContent: "center",
+          gap: "2%",
         }}
       >
-        <input
-          style={{ textAlign: "center", margin: "1%" }}
-          placeholder={informations.firstname}
-          value={firstName ?? ""}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <input
-          style={{ textAlign: "center", margin: "1%" }}
-          placeholder={informations.lastname}
-          value={lastName ?? ""}
-          onChange={(e) => setLastName(e.target.value)}
-        />
+        <div>
+          <input
+            placeholder={informations.firstname}
+            value={firstName ?? ""}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            placeholder={informations.lastname}
+            value={lastName ?? ""}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "center", gap: "1vw" }}>
-        <button className="edit-button" onClick={handleSaveClick}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "2%",
+          marginTop:'2%'
+        }}
+      >
+        <button className="inputname_edit-button" onClick={handleSaveClick}>
           Save
         </button>
-        <button className="edit-button" onClick={() => setIsEditing(false)}>
+        <button
+          className="inputname_edit-button"
+          onClick={() => setIsEditing(false)}
+        >
           Cancel
         </button>
       </div>

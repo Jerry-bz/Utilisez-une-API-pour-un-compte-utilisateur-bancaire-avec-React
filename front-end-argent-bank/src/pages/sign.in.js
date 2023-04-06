@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile, getToken, getSession } from "../features/user.slice";
 import { setAuthHeader } from "../features/user.api";
+import "../styles/sign.in.css";
 
 // The sign-in page component
 
@@ -30,12 +31,11 @@ export default function SignIn() {
   }, [dispatch, navigate]);
 
   return (
-    <main className="main bg-dark">
-      <section className="sign-in-content">
-        <i className="fa fa-user-circle sign-in-icon"></i>
+    <main className="signin">
+      <section className="signin_content">
+        <i className="fa fa-user-circle signin_icon"></i>
         <h1>Sign In</h1>
-
-        <div className="input-wrapper">
+        <div className="signin_imput-wrapper">
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -43,7 +43,7 @@ export default function SignIn() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="input-wrapper">
+        <div className="signin_imput-wrapper">
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -51,12 +51,12 @@ export default function SignIn() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="input-remember">
+        <div className="signin_input-remember">
           <input type="checkbox" id="remember-me" />
           <label htmlFor="remember-me">Remember me</label>
         </div>
-        {message && <p className="error-auth">{message}</p>}
-        <button className="sign-in-button" onClick={() => handleSubmit()}>
+        {message && <p className="signin_error-auth">{message}</p>}
+        <button className="signin_button" onClick={() => handleSubmit()}>
           Sign In
         </button>
       </section>
